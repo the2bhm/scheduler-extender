@@ -2,7 +2,7 @@ package controller
 
 import (
 	"log"
-
+	"math/rand"
 	schedulerapi "k8s.io/kubernetes/pkg/scheduler/api"
 )
 
@@ -17,7 +17,7 @@ func prioritize ( args schedulerapi.ExtenderArgs) *schedulerapi.HostPriorityList
   hostPriorityList := make(schedulerapi.HostPriorityList, len(nodes))
   for i, node := range nodes {
       score := rand.Intn(schedulerapi.MaxPriority+1)// 在最大优先级内随机取一个值               
-      log.Printf(luckyPrioMsg,pod.Name,pod.Namespace,score)
+      log.Printf(PrioMsg,pod.Name,pod.Namespace,score)
       hostPriorityList[i] = schedulerapi.HostPriority{ 
           Host: node.Name,
 	  Score: score,

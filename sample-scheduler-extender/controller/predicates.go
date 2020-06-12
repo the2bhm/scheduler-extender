@@ -23,7 +23,7 @@ func filter(args schedulerapi.ExtenderArgs) *schedulerapi.ExtenderFilterResult {
 		}
 	}
 
-	result := schedulerapi.ExtenderFilterResult{
+	result := schedulerapi.ExtenderFilterResult {
 		Nodes: &v1.NodeList{
 			Items: filteredNodes,
 		},

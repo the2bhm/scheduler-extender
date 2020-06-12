@@ -50,4 +50,5 @@ func prioritize ( args schedulerapi.ExtenderArgs) *schedulerapi.HostPriorityList
  }
 ```
 
+### 过程及结果截图均在pdf里
 
